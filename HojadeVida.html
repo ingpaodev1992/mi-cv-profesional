@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Paola Marcela Argüelles Salazar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            color: #00ffff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+            background-attachment: fixed;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 
+                0 0 50px rgba(0, 255, 255, 0.3),
+                inset 0 0 50px rgba(0, 255, 255, 0.1),
+                0 0 100px rgba(255, 0, 255, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(0, 255, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, 
+                rgba(255, 0, 255, 0.8) 0%, 
+                rgba(0, 255, 255, 0.8) 25%, 
+                rgba(0, 255, 0, 0.8) 50%, 
+                rgba(255, 255, 0, 0.8) 75%, 
+                rgba(255, 0, 255, 0.8) 100%);
+            color: #000;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 3;
+        }
+        
+        .name {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.8em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 30px rgba(255, 255, 255, 0.4);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 10px rgba(255, 255, 255, 0.8),
+                    0 0 20px rgba(255, 255, 255, 0.6),
+                    0 0 30px rgba(255, 255, 255, 0.4);
+            }
+            to {
+                text-shadow: 
+                    0 0 20px rgba(255, 255, 255, 1),
+                    0 0 30px rgba(255, 255, 255, 0.8),
+                    0 0 40px rgba(255, 255, 255, 0.6);
+            }
+        }
+        
+        .subtitle {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+        
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+        }
+        
+        .content {
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section {
+            padding: 40px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                #ff00ff 0%, 
+                #00ffff 25%, 
+                #00ff00 50%, 
+                #ffff00 75%, 
+                #ff00ff 100%);
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #00ff00;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            text-shadow: 
+                0 0 10px #00ff00,
+                0 0 20px #00ff00,
+                0 0 30px #00ff00;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #00ff00, #00ffff);
+            border-radius: 2px;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        
+        .profile-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            text-shadow: 0 0 5px rgba(224, 224, 224, 0.5);
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, 
+                rgba(255, 0, 255, 0.3) 0%, 
+                rgba(0, 255, 255, 0.3) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #ffffff;
+            border: 1px solid rgba(255, 0, 255, 0.5);
+        }
+        
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                rgba(255, 0, 255, 0.05) 0%,
+                rgba(0, 255, 255, 0.05) 25%,
+                rgba(0, 255, 0, 0.05) 50%,
+                rgba(255, 255, 0, 0.05) 75%,
+                rgba(255, 0, 255, 0.05) 100%);
+            pointer-events: none;
+        }
+        
+        .experience-item:hover {
+            border-color: #00ff00;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 0, 0.5),
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .job-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #ff00ff;
+            margin-bottom: 8px;
+            text-shadow: 
+                0 0 10px #ff00ff,
+                0 0 20px #ff00ff;
+        }
+        
+        .job-company {
+            font-size: 1.15em;
+            color: #00ffff;
+            font-weight: 600;
+            text-shadow: 0 0 8px #00ffff;
+        }
+        
+        .job-date {
+            font-size: 1em;
+            color: #ffff00;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 8px 15px;
+            border-radius: 25px;
+            border: 2px solid #ffff00;
+            box-shadow: 
+                0 0 10px #ffff00,
+                inset 0 0 10px rgba(255, 255, 0, 0.1);
+            text-shadow: 0 0 5px #ffff00;
+        }
+        
+        .job-description {
+            font-style: italic;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-shadow: 0 0 3px rgba(176, 176, 176, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-category {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #00ff00;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 
+                0 0 8px #00ff00,
+                0 0 15px #00ff00;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .achievement-list {
+            list-style: none;
+            margin-left: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .achievement-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.7;
+            color: #e0e0e0;
+            text-shadow: 0 0 3px rgba(224, 224, 224, 0.3);
+        }
+        
+        .achievement-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00ffff;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-shadow: 
+                0 0 8px #00ffff,
+                0 0 15px #00ffff;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .achievement-list li strong {
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .skill-category {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00, #ffff00);
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+        }
+        
+        .skill-category:hover {
+            border-color: #00ff00;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 0, 0.4),
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            transform: translateY(-3px);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category h4 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #00ff00;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 
+                0 0 8px #00ff00,
+                0 0 15px #00ff00;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            font-size: 1em;
+            color: #d0d0d0;
+            text-shadow: 0 0 3px rgba(208, 208, 208, 0.3);
+            transition: color 0.3s ease;
+        }
+        
+        .skill-list li:hover {
+            color: #00ffff;
+            text-shadow: 0 0 8px #00ffff;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .education-item {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00ff00, #00ffff);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+        }
+        
+        .degree {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #00ff00;
+            margin-bottom: 8px;
+            text-shadow: 
+                0 0 8px #00ff00,
+                0 0 15px #00ff00;
+        }
+        
+        .university {
+            font-size: 1.1em;
+            color: #00ffff;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        
+        .education-description {
+            font-style: italic;
+            color: #b0b0b0;
+            line-height: 1.7;
+            text-shadow: 0 0 3px rgba(176, 176, 176, 0.3);
+        }
+        
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .language-item {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(255, 165, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .language-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6600, #ffff00);
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
+        }
+        
+        .language-item:hover {
+            border-color: #ff6600;
+            box-shadow: 
+                0 0 20px rgba(255, 102, 0, 0.4),
+                inset 0 0 20px rgba(255, 102, 0, 0.1);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        
+        .language-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #ff6600;
+            margin-bottom: 8px;
+            text-shadow: 
+                0 0 8px #ff6600,
+                0 0 15px #ff6600;
+        }
+        
+        .language-level {
+            color: #ffff00;
+            font-weight: 600;
+            text-shadow: 0 0 5px #ffff00;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, 
+                rgba(255, 0, 255, 0.2) 0%, 
+                rgba(0, 255, 255, 0.2) 100%);
+            color: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(255, 0, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                rgba(255, 0, 255, 0.1) 0%,
+                rgba(0, 255, 255, 0.1) 100%);
+            pointer-events: none;
+        }
+        
+        .achievement-card:hover {
+            border-color: #00ff00;
+            box-shadow: 
+                0 0 25px rgba(0, 255, 0, 0.6),
+                inset 0 0 25px rgba(0, 255, 0, 0.1);
+            transform: scale(1.05) rotateZ(1deg);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.2em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 
+                0 0 10px #ffffff,
+                0 0 20px #ffffff,
+                0 0 30px #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .achievement-text {
+            font-size: 1em;
+            opacity: 0.95;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-note {
+            text-align: center;
+            font-style: italic;
+            color: #00ffff;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 25px;
+            font-size: 1.1em;
+            text-shadow: 
+                0 0 8px #00ffff,
+                0 0 15px #00ffff;
+            border-top: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ff00ff, #00ffff);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #00ffff, #00ff00);
+        }
+        
+        @media print {
+            body {
+                background: #000;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .header::before,
+            .container::before,
+            .experience-item::before,
+            .skill-category::before,
+            .education-item::before,
+            .language-item::before,
+            .achievement-card::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .name {
+                font-size: 2.2em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+                letter-spacing: 1px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .achievement-card {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">Paola Marcela Argüelles Salazar</h1>
+                <p class="subtitle">INGENIERÍA DE SISTEMAS | DATA SCIENCE | RPA & POWER PLATFORM | POWER BI | SQL | VISUAL BASIC</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Bogotá, Colombia</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+57-(319)-361-2397</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>ingpaodev92@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <a href="https://www.linkedin.com/in/ingpaodev" target="_blank" style="color: inherit; text-decoration: none;">linkedin.com/in/ingpaodev</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">Perfil Profesional</h2>
+                <p class="profile-text">
+                    <span class="highlight">Analista de Datos e Ingeniera de Sistemas en formación</span> (8vo semestre), especializada en <span class="highlight">análisis de datos</span>, <span class="highlight">business intelligence</span>, <span class="highlight">automatización de procesos</span> y con orientación hacia <span class="highlight">Machine Learning</span> y <span class="highlight">Ciencia de Datos</span>. Experiencia sólida en <span class="highlight">Power BI</span>, <span class="highlight">SQL</span>, <span class="highlight">ETL</span> y <span class="highlight">desarrollo de soluciones tecnológicas</span> que transforman datos complejos en insights estratégicos para la toma de decisiones.
+                </p>
+                <p class="profile-text">
+                    Con experiencia comprobada en <span class="highlight">liderazgo de proyectos de transformación digital</span>, he automatizado procesos que han generado ahorros significativos de tiempo y eliminado errores humanos. Mi enfoque está en integrar <span class="highlight">técnicas de análisis avanzadas, automatización e inteligencia artificial</span>, buscando siempre la optimización de procesos y la innovación tecnológica.
+                </p>
+                <p class="profile-text">
+                    <strong>Objetivo profesional:</strong> Transicionar hacia roles de <span class="highlight">Ciencia de Datos</span> y <span class="highlight">Machine Learning Engineering</span>, aplicando mi experiencia en análisis de datos y automatización para desarrollar soluciones predictivas e inteligentes que generen valor empresarial.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Experiencia Profesional</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">ANALISTA CONNECT - SEGURIDAD OPERACIONAL AEROPORTUARIA</h3>
+                            <p class="job-company">Securitas Colombia - Regional Aviación, Branch Pasajeros</p>
+                        </div>
+                        <div class="job-date">Abr 2024 - Presente</div>
+                    </div>
+                    <p class="job-description">Especialista en análisis y estructuración de datos operativos en seguridad aeroportuaria para la toma de decisiones estratégicas</p>
+                    
+                    <div class="project-category">📋 Responsabilidades Principales:</div>
+                    <ul class="achievement-list">
+                        <li>Análisis y estructuración de datos operativos en seguridad aeroportuaria para la toma de decisiones estratégicas</li>
+                        <li>Generación de reportes gerenciales y dashboards en Power BI para el seguimiento de métricas críticas</li>
+                        <li>Organización de jerarquías y relaciones entre aeropuertos, aerolíneas y regionales para mejorar la trazabilidad de la información</li>
+                    </ul>
+                    
+                    <div class="project-category">🎯 Proyectos de Análisis de Datos e Inteligencia de Negocios:</div>
+                    <ul class="achievement-list">
+                        <li><strong>Dashboard Ejecutivo para Monitoreo de Tiempos en Posición (Avianca):</strong> Diseñé y ejecuté proceso integral de análisis de datos para monitoreo de agentes de control en vuelos internacionales. Implementé procesos ETL para depuración de datos operativos y desarrollé dashboard interactivo en Power BI con 7 lienzos temáticos, permitiendo análisis de cumplimiento, identificación de brechas de puntualidad y monitoreo de desempeño individual.</li>
+                        <li><strong>Dashboard Ejecutivo HSE - Evaluación Integral de Riesgos:</strong> Desarrollé sistema de inteligencia de negocios procesando 172 variables en 12 categorías de riesgo laborales. Implementé 13 tableros interconectados utilizando DAX avanzado y modelado de datos relacionales, identificando gaps críticos de cumplimiento normativo y reduciendo 40% el tiempo de análisis HSE.</li>
+                        <li><strong>Sistema de Control y Análisis de Costos Directos:</strong> Diseñé dashboard interactivo para seguimiento de costos directos, facturación y desempeño por cliente/proyecto. Implementé medidas DAX avanzadas para KPIs de costo directo total, márgenes de facturación con alertas visuales automáticas y análisis de rentabilidad en tiempo real.</li>
+                    </ul>
+                    
+                    <div class="project-category">🤖 Automatización de Procesos (RPA - Microsoft Power Platform):</div>
+                    <ul class="achievement-list">
+                        <li><strong>Implementación de Flujos ETL en Power Automate:</strong> Desarrollé flujos ETL automatizados en Power Automate para descarga, limpieza y carga automática de datasets en Power BI. Logré reportes en tiempo real eliminando procesos manuales de actualización de datos.</li>
+                        <li><strong>Migración y Modernización de Sistemas:</strong> Migré gestor de usuarios y requerimientos desde Google Apps Script hacia Power Apps, alineando la solución a las políticas corporativas de seguridad y estandarización tecnológica.</li>
+                    </ul>
+                    
+                    <div class="project-category">⚡ Optimización de Procesos Operativos:</div>
+                    <ul class="achievement-list">
+                        <li><strong>Automatización de Itinerarios de Vuelos Internacionales:</strong> Desarrollé script en Visual Basic que automatizó la generación de itinerarios mensuales para vuelos internacionales, reduciendo tiempo de elaboración de 2 horas manuales a solo 5 minutos (96% de eficiencia) con organización automática por día y cumplimiento operativo.</li>
+                        <li><strong>Gestión Optimizada de Dispositivos Operativos:</strong> Mejoré la gestión de dispositivos operativos a través de SOTI, aplicando buenas prácticas de instalación, control de aplicaciones y optimización del uso de recursos tecnológicos en campo.</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>🔧 Tecnologías y Herramientas Aplicadas:</strong> Power BI, Power Automate, Power Apps, DAX Avanzado, Visual Basic, SOTI, ETL, SQL, Análisis de Datos, Microsoft Power Platform, Automatización RPA, Gestión de Dispositivos, Modelado de Datos Relacionales</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">AUXILIAR DE INGENIERÍA</h3>
+                            <p class="job-company">Consorcio KBE Vial Usme</p>
+                        </div>
+                        <div class="job-date">Oct 2023 - Abr 2024</div>
+                    </div>
+                    <ul class="achievement-list">
+                        <li><strong>Informes Analíticos y Dashboards:</strong> Transformé datos de progreso en reportes visuales y dashboards en Excel, facilitando decisiones estratégicas en tiempo real.</li>
+                        <li><strong>Documentación y Control de Actividades:</strong> Elaboré actas parciales de obra que consolidaban información de ejecución, asegurando el cumplimiento de requisitos legales y administrativos.</li>
+                        <li><strong>Monitoreo y Análisis Diario:</strong> Realicé seguimiento diario del avance del proyecto mediante análisis cuantitativos, garantizando la calidad y cumplimiento de los plazos establecidos.</li>
+                        <li><strong>Validación y Optimización de Procesos:</strong> Apliqué métodos estadísticos y matemáticos para verificar la eficiencia de las actividades constructivas y optimizar los procesos operativos.</li>
+                        <li><strong>Innovación en Comunicación y Gestión de Datos:</strong> Implementé herramientas basadas en inteligencia artificial, como ChatGPT, para mejorar la comunicación interna y agilizar la gestión de información.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">AUXILIAR DE INGENIERÍA</h3>
+                            <p class="job-company">Consorcio Pluviales FM</p>
+                        </div>
+                        <div class="job-date">Ago 2020 - Feb 2023</div>
+                    </div>
+                    <ul class="achievement-list">
+                        <li><strong>Informes Estratégicos y Dashboards:</strong> Transformé datos operativos en informes y dashboards en Excel, facilitando la toma de decisiones en proyectos de infraestructura.</li>
+                        <li><strong>Optimización de Costos y Facturación:</strong> Gestioné y analicé costos, proyecciones y facturación mensual mediante cálculos avanzados, optimizando recursos financieros y operativos.</li>
+                        <li><strong>Control de Ejecución y Calidad:</strong> Elaboré actas parciales y reportes de avance físico-financiero, asegurando la correcta ejecución y supervisión de procesos constructivos.</li>
+                        <li><strong>Automatización y Mejora de Procesos:</strong> Automaticé memorias de cálculo y procesos de registro en Excel, mejorando la eficiencia y comunicación en la gestión de datos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Formación Académica</h2>
+                <div class="education-item">
+                    <h3 class="degree">INGENIERÍA DE SISTEMAS</h3>
+                    <p class="university">2021 - 2025 (8vo Semestre) | Universidad Corporacion Universitaria Minuto de Dios</p>
+                    <p class="education-description">Formación integral en desarrollo de software, análisis de sistemas, bases de datos y metodologías de desarrollo. Enfoque especializado en análisis de datos, automatización de procesos y tecnologías emergentes.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Idiomas</h2>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">🇪🇨 Español</div>
+                        <div class="language-level">Nativo</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">🇺🇸 Inglés</div>
+                        <div class="language-level">A2 (En proceso de mejoramiento)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Competencias Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>💻 Programación y Desarrollo</h4>
+                        <ul class="skill-list">
+                            <li>Microsoft Power Platform (Power BI, Power Apps, Power Automate)</li>
+                            <li>Visual Basic - Automatización y scripting avanzado</li>
+                            <li>Apps Script, Google Sheets API</li>
+                            <li>Arquitectura RESTful</li>
+                            <li>HTML/CSS (Básico)</li>
+                            <li>Python (En desarrollo - Enfoque hacia Data Science)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>📈 Business Intelligence y Analytics</h4>
+                        <ul class="skill-list">
+                            <li>Power BI (Avanzado) - DAX, Modelado de Datos, Dashboards Ejecutivos</li>
+                            <li>Power Automate - Flujos ETL automatizados</li>
+                            <li>SQL (Intermedio) - Consultas complejas, ETL</li>
+                            <li>Excel (Avanzado) - Automatización, Macros, Análisis Estadístico</li>
+                            <li>Modelado de Datos Relacionales</li>
+                            <li>KPIs y Métricas de Negocio</li>
+                            <li>Reportería Ejecutiva Automatizada</li>
+                            <li>Análisis Estadístico y Descriptivo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>🔄 Automatización y RPA</h4>
+                        <ul class="skill-list">
+                            <li>Microsoft Power Platform - Power Automate, Power Apps</li>
+                            <li>RPA con Power Automate - Flujos ETL automatizados</li>
+                            <li>Visual Basic - Scripts de automatización operativa</li>
+                            <li>Apps Script para automatización empresarial</li>
+                            <li>Workflows automatizados y optimización de procesos</li>
+                            <li>Migración de sistemas y modernización tecnológica</li>
+                            <li>Reducción de tareas manuales repetitivas</li>
+                            <li>Gestión de cambios y requerimientos en automatización</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>🔧 Gestión de Sistemas y Dispositivos</h4>
+                        <ul class="skill-list">
+                            <li>SOTI - Gestión de dispositivos móviles empresariales</li>
+                            <li>Optimización de recursos tecnológicos en campo</li>
+                            <li>Buenas prácticas de instalación y control de aplicaciones</li>
+                            <li>Protocolos de mantenimiento preventivo de equipos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>🤖 Orientación hacia Data Science & ML</h4>
+                        <ul class="skill-list">
+                            <li>Análisis Exploratorio de Datos (EDA)</li>
+                            <li>Limpieza y Preparación de Datos</li>
+                            <li>Visualización Avanzada de Datos</li>
+                            <li>Metodologías Ágiles aplicadas a proyectos de datos</li>
+                            <li>En desarrollo: Machine Learning, Python (pandas, numpy), Estadística Avanzada</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Logros Destacados</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-number">96%</div>
+                        <div class="achievement-text">Reducción en tiempo de itinerarios (Visual Basic)</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">40%</div>
+                        <div class="achievement-text">Reducción en tiempo de análisis HSE</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">100%</div>
+                        <div class="achievement-text">Automatización de solicitudes de personal</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">✅</div>
+                        <div class="achievement-text">Certificación Data Analyst Platzi Completada</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">13</div>
+                        <div class="achievement-text">Tableros interconectados desarrollados</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">172</div>
+                        <div class="achievement-text">Variables de riesgo procesadas en sistema HSE</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">🚀</div>
+                        <div class="achievement-text">Data Scientist en progreso (Platzi 2025)</div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-number">5 min</div>
+                        <div class="achievement-text">Tiempo actual de generación de itinerarios</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer-note">
+            Profesional en constante crecimiento hacia la ciencia de datos, con pasión por la innovación tecnológica y la optimización de procesos mediante análisis de datos avanzado.
+        </div>
+    </div>
+</body>
+</html>
